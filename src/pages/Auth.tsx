@@ -8,11 +8,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { toast } from "sonner";
 import { Navbar } from "@/components/Navbar";
 import { z } from "zod";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const authSchema = z.object({
   email: z.string().email("Invalid email address"),
   password: z.string().min(6, "Password must be at least 6 characters"),
   fullName: z.string().min(2, "Name must be at least 2 characters").optional(),
+  role: z.enum(["user", "cashier", "admin"]).optional(),
 });
 
 export default function Auth() {
@@ -22,6 +24,7 @@ export default function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
+  const [role, setRole] = useState<"user" | "cashier" | "admin">("user");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -51,6 +54,7 @@ export default function Auth() {
         email,
         password,
         fullName: isSignUp ? fullName : undefined,
+        role: isSignUp ? role : undefined,
       });
 
       if (!validation.success) {
@@ -66,6 +70,7 @@ export default function Auth() {
           options: {
             data: {
               full_name: fullName,
+              role: role,
             },
             emailRedirectTo: `${window.location.origin}/`,
           },
@@ -116,16 +121,31 @@ export default function Auth() {
           <CardContent>
             <form onSubmit={handleAuth} className="space-y-4">
               {isSignUp && (
-                <div className="space-y-2">
-                  <Label htmlFor="fullName">Full Name</Label>
-                  <Input
-                    id="fullName"
-                    type="text"
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    required
-                  />
-                </div>
+                <>
+                  <div className="space-y-2">
+                    <Label htmlFor="fullName">Full Name</Label>
+                    <Input
+                      id="fullName"
+                      type="text"
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="role">Login As</Label>
+                    <Select value={role} onValueChange={(value: "user" | "cashier" | "admin") => setRole(value)}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select role" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="user">User</SelectItem>
+                        <SelectItem value="cashier">Cashier</SelectItem>
+                        <SelectItem value="admin">Admin</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </>
               )}
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
