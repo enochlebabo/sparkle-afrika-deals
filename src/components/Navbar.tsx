@@ -38,6 +38,15 @@ export const Navbar = () => {
           </span>
         </Link>
         
+        <div className="hidden md:flex items-center gap-6">
+          <Link to="/about" className="text-sm font-medium hover:text-primary transition-colors">
+            About Us
+          </Link>
+          <Link to="/locations" className="text-sm font-medium hover:text-primary transition-colors">
+            Locations
+          </Link>
+        </div>
+        
         <div className="flex items-center gap-4">
           {user ? (
             <>

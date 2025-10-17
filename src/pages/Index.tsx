@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
@@ -119,6 +120,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
