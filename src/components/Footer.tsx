@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Car, Facebook, Instagram, Twitter, Mail, Phone } from "lucide-react";
+import { Car, Facebook, Instagram, Twitter, Mail, Phone, Smartphone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   return (
@@ -60,7 +61,7 @@ export const Footer = () => {
 
           <div>
             <h3 className="font-semibold mb-4">Follow Us</h3>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-6">
               <a
                 href="https://facebook.com"
                 target="_blank"
@@ -86,11 +87,19 @@ export const Footer = () => {
                 <Twitter className="h-5 w-5" />
               </a>
             </div>
+            <h3 className="font-semibold mb-4">Download App</h3>
+            <Button variant="outline" size="sm" className="w-full" asChild>
+              <a href="#" className="flex items-center gap-2">
+                <Smartphone className="h-4 w-4" />
+                Get Mobile App
+              </a>
+            </Button>
           </div>
         </div>
 
-        <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
+        <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground space-y-2">
           <p>&copy; {new Date().getFullYear()} DETAILEO. All rights reserved.</p>
+          <p className="text-xs">Sponsored by <span className="font-semibold text-foreground">MRCHAPTER_VERSE HOLDINGS</span></p>
         </div>
       </div>
     </footer>
