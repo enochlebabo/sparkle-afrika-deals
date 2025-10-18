@@ -22,12 +22,12 @@ export const ServiceCard = ({
   onSelect,
 }: ServiceCardProps) => {
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+    <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
       <div className="aspect-square overflow-hidden">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
       </div>
       <CardHeader>
@@ -48,7 +48,7 @@ export const ServiceCard = ({
         </ul>
       </CardContent>
       <CardFooter>
-        <Button onClick={onSelect} className="w-full">
+        <Button onClick={onSelect} className="w-full transition-transform hover:scale-105">
           Select {name}
         </Button>
       </CardFooter>
