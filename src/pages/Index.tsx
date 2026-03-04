@@ -78,7 +78,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div className="text-center p-6 rounded-2xl bg-card hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slide-up opacity-0" style={{ animationDelay: '100ms' }}>
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-full mb-6 transition-transform hover:scale-110 shadow-lg">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-6 transition-transform hover:scale-110 shadow-lg">
                 <Sparkles className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-foreground">Premium Quality</h3>
@@ -92,7 +92,7 @@ const Index = () => {
               <p className="text-muted-foreground text-lg">Get 10% off on your 4th wash in a month</p>
             </div>
             <div className="text-center p-6 rounded-2xl bg-card hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slide-up opacity-0" style={{ animationDelay: '500ms' }}>
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-full mb-6 transition-transform hover:scale-110 shadow-lg">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-6 transition-transform hover:scale-110 shadow-lg">
                 <Clock className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-foreground">Easy Booking</h3>
