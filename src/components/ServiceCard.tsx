@@ -35,7 +35,7 @@ export const ServiceCard = ({
         <CardTitle className="text-2xl group-hover:text-primary transition-colors duration-300">{name}</CardTitle>
         <CardDescription className="text-base">{description}</CardDescription>
         <div className="pt-2">
-          <p className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <p className="text-3xl font-bold text-primary">
             {currency} {basePrice.toFixed(2)}
           </p>
         </div>
